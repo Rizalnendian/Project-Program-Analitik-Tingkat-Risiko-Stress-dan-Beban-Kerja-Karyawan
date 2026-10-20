@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url(../property/bg-branding.svg);
+    background-image: url(../bg-branding.svg);
     background-repeat: no-repeat;
     background-size: cover;
     color: aliceblue;
