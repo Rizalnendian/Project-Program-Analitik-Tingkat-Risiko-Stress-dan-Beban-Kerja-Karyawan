@@ -3,19 +3,19 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2026 at 03:32 PM
+-- Generation Time: Oct 22, 2026 at 03:46 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+-- START TRANSACTION;
+-- SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+-- /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+-- /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+-- /*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `analitik_beban_kerja`
@@ -26,6 +26,14 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `departments`
 --
+
+SET sql_require_primary_key = OFF;
+
+DROP TABLE IF EXISTS task_allocations;
+DROP TABLE IF EXISTS surveys;
+DROP TABLE IF EXISTS employee_profiles;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS departments;
 
 CREATE TABLE `departments` (
   `id` bigint(20) NOT NULL,
@@ -150,7 +158,9 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `gender`, `role`) V
 (4, 'Nana Aminah', 'nana@gmail.com', '$2a$10$EWgJ9.oqJsghwONXwVD0UuhpKz0SuOBd8xGN94Anj19n9L7B8eHLq', 'PEREMPUAN', 'KARYAWAN'),
 (5, 'Budi Santoso', 'budi@gmail.com', '$2a$10$aoid8ZZfmlCGct6yAy60fums1z9Cqs19FrWCJ1heWafAMZ3peh8re', 'LAKI_LAKI', 'MANAJER'),
 (6, 'Firdaus', 'firdaus.frds13@gmail.com', '$2a$10$BiV6KoFM3MIqMvhzDU51J.rddigJftnHoobddSLgbJQPqzyaWd4hC', 'LAKI_LAKI', 'MANAJER'),
-(7, 'Yogi', 'yogicihuy123@gmail.com', '$2a$10$jBtdAK8.QFuamCoOULjtmOYB8BBwNdeH1ar6Vdho5r6wuHSuhCYny', 'LAKI_LAKI', 'KARYAWAN');
+(7, 'Yogi', 'yogicihuy123@gmail.com', '$2a$10$jBtdAK8.QFuamCoOULjtmOYB8BBwNdeH1ar6Vdho5r6wuHSuhCYny', 'LAKI_LAKI', 'KARYAWAN'),
+(8, 'Rizal Nendian R', 'rizalnendian@gmail.com', '$2a$10$2yzxkq4FYvztw4TPbK1ZqusYMEkltSUU6Ugntxakva3PDnrgkwc6W', 'LAKI_LAKI', 'MANAJER'),
+(9, 'Rizal Nendian R', 'rnendian0522@gmail.com', '$2a$10$ZlQy2K5mfWvRnmUMHGocquk2WdG00FEeVz8X2qglWyzSwLG9vExOu', 'LAKI_LAKI', 'KARYAWAN');
 
 --
 -- Indexes for dumped tables
@@ -225,7 +235,7 @@ ALTER TABLE `task_allocations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -252,6 +262,6 @@ ALTER TABLE `task_allocations`
   ADD CONSTRAINT `FKokqixw0ox8rwqey5dl1txq3yd` FOREIGN KEY (`manager_id`) REFERENCES `users` (`id`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+-- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
